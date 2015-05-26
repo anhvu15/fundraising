@@ -1,0 +1,21 @@
+<h2><%= pluralize(@projects.size,'Project') %></h2>
+<table class="project-list">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Amount</th>
+			<th>Website</th>
+		</tr>		
+	</thead>
+	<tbody>
+		<% @projects.each do |p| %>
+			<tr>
+				<td><%=link_to p.name,p %></td>
+				<td><%=truncate p.description,length: 30,separator: ' '%></td>
+				<td><%=number_to_currency p.target_pledge_amount %></td>
+				<td><%=p.website %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

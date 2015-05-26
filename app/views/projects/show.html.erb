@@ -1,0 +1,21 @@
+<h2><%=@project.name %></h2>
+	<p><%= @project.description %></p>
+		<table>
+			<tbody>
+				<tr>
+					<th>Target Amount</th>
+					<td><%= display_currency(@project.target_pledge_amount)%></td>
+				</tr>
+				<tr>
+					<th>End Date</th>
+					<td><%= display_usa_date(@project.pledging_ends_on) %></td>			
+				</tr>
+				<tr>
+					<th>Website</th>
+					<td><%=@project.website %></td>
+				</tr>
+			</tbody>
+		</table>
+	<p><%= link_to "All Projects", projects_path %></p>
+
+	
